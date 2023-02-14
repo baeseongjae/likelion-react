@@ -1,8 +1,3 @@
-import './utils/supportJavaScript.js';
+// React 컴포넌트 vs 엘리먼트
 
-// import './vanilla.script.js';
-
-import './react.script.js';
-
-// import './likereact.script.js';
-
+import './learn/react.components.js';
