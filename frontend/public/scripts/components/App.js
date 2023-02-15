@@ -26,7 +26,8 @@ var App = /*#__PURE__*/function (_React$Component) {
       headline: 'React Application',
       // isDisabled: false;
       isToggle: false,
-      isLoading: false
+      isLoading: !true,
+      hasError: null
     });
     _defineProperty(_assertThisInitialized(_this), "originalHeadline", _this.state.headline);
     _defineProperty(_assertThisInitialized(_this), "willUpdateHeadline", 'NEW HEADLINE! 😎');
@@ -69,9 +70,21 @@ var App = /*#__PURE__*/function (_React$Component) {
           role: "alert"
         }, "\uB370\uC774\uD130 \uB85C\uB529 \uC911...");
       }
+      if (this.state.hasError) {
+        return /*#__PURE__*/React.createElement("div", {
+          role: "alert"
+        }, this.state.hasError.message);
+      }
+
+      // `style` prop object!!!!!!!
+      var hiddenStyle = {
+        display: 'none'
+      };
       return /*#__PURE__*/React.createElement("div", {
         "data-component": "App"
-      }, /*#__PURE__*/React.createElement("h1", null, headline), /*#__PURE__*/React.createElement("button", {
+      }, /*#__PURE__*/React.createElement("h1", {
+        style: "display: none;"
+      }, headline), /*#__PURE__*/React.createElement("button", {
         // disabled={this.state.isDisabled}
         type: "button",
         onClick: this.handleChangeHeadline

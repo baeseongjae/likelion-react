@@ -3,11 +3,18 @@ class App extends React.Component {
   // 2022 6. 표준 기술
   // public, private 클래스 필드, 피처
 
+  // 조건부 렌더링 (CSR) vs. 조건부 표시 (CSS : display, visibility, overflow, opacity)
+  // React (JavaScript) vs. Vue (directives: v-if, v-show)
+
+  // 선언형
+  // React 처럼 생각하기
+  
   state = {
     headline: 'React Application',
     // isDisabled: false;
     isToggle: false,
-    isLoading: false,
+    isLoading: !true,
+    hasError: null,
   };
 
   // 클래스에서는 이렇게 기억할 수 있는 임의의 데이터를 관리할 수 있다.
@@ -52,9 +59,17 @@ class App extends React.Component {
       return <div role="alert">데이터 로딩 중...</div> 
     }
 
+    if(this.state.hasError){
+      return <div role="alert">{this.state.hasError.message}</div>
+    }
+
+    // `style` prop object!!!!!!!
+    const hiddenStyle = { display: 'none' };
+
+
     return (
       <div data-component="App">
-        <h1>{headline}</h1>
+        <h1 style="display: none;">{headline}</h1>
         {/* React의 JSX(React 엘리먼트)에 연결한 이벤트 리스너(함수)는 언제 실행되는가? */}
         <button 
           // disabled={this.state.isDisabled}
