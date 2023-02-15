@@ -4,6 +4,7 @@ class App extends React.Component {
 
     this.state = {
       headline: 'React Application',
+      isDisabled: false,
     };
 
     this.handleChangeHeadline = this.handleChangeHeadline.bind(this);
@@ -12,6 +13,7 @@ class App extends React.Component {
   handleChangeHeadline() {
     this.setState({
       headline: 'NEW HEADLINE! 😃',
+      isDisabled: true,
     });
   }
 
@@ -20,7 +22,10 @@ class App extends React.Component {
       <div data-component="App">
         <h1>{this.state.headline}</h1>
         {/* React의 JSX(React 엘리먼트)에 연결한 이벤트 리스너(함수)는 언제 실행되는가? */}
-        <button type="button" onClick={this.handleChangeHeadline}>
+        <button 
+          disabled={this.state.isDisabled}
+          type="button" 
+          onClick={this.handleChangeHeadline}>
           헤드라인 업데이트
         </button>
       </div>
