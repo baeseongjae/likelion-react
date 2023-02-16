@@ -1,5 +1,6 @@
 import LogIn from './pages/LogIn.js';
 import Browse from './pages/Browse.js';
+import Home from './pages/Home.js';
 
 class App extends React.Component {
 
@@ -48,6 +49,13 @@ class App extends React.Component {
     // error ?? console.log('현재 앱에는 오류(error)가 발생하지 않았습니다.');
 
     // 옵셔널 체이닝을 사용해 조건 처리해봅니다.
+    // if (error) {
+    //   if (typeof error.log === 'function') {
+    //     error.log();
+    //   }
+    // }
+
+
     // error && typeof error.log === 'function' && error.log();
 
     // let error = {
@@ -94,7 +102,10 @@ class App extends React.Component {
       return <div role="alert">{this.state.hasError.message}</div>
     }
 
-    
+    return (
+      <Home />
+    )
+
     return (
       <div className="App">
         <h1>{headline}</h1>
@@ -110,7 +121,7 @@ class App extends React.Component {
 
         {/* 조건부 렌더링 (화면에 그리지 않음: 민감, 보안, 결제 등 요구) */}  
         { isPaid && <Browse /> }
-        
+
       </div>
     );
   }
