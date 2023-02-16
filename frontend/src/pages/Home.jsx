@@ -11,13 +11,23 @@ class Home extends React.Component {
 
   render() {
     return (
-      <section>
+      <>
         <h2>설명 목록 리스트 렌더링</h2>
         <dl>
-          <dt>기술 용어</dt>
-          <dd>용어 설명 내용</dd>
+          {
+            Object.entries(this.state.descriptionList).map(([key,value])=>{
+              return(
+                <React.Fragment key={key}>
+                  <dt>{key.toUpperCase()}</dt>
+                  <dd>{value}</dd>
+                </React.Fragment>
+              );
+            })
+          }
+          
         </dl>
-      </section>
+      </>
+        
     );
   }
 

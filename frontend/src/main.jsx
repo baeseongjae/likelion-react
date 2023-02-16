@@ -1,4 +1,4 @@
-import App from './App.js';
+import App from './App.jsx';
 
 // ES 구조 분해 할당
 // 번들링 (트리 쉐이킹)

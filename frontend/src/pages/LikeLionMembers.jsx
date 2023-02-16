@@ -1,6 +1,6 @@
 import { likeLionMembers } from '../data/likeLionMembers.js';
 
-class Home extends React.Component {
+class likeLionMembers extends React.Component {
   state = {
     // 모든 것을 상태로 설정하는 것은 적절하지 않다.
     members: likeLionMembers,
