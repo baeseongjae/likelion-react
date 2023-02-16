@@ -2,7 +2,7 @@ import LogIn from './pages/LogIn.js';
 import Browse from './pages/Browse.js';
 import Home from './pages/Home.js';
 
-import { likeLionMembers } from './data/likeLionMembers.js';
+// import { likeLionMembers } from './data/likeLionMembers.js';
 
 class App extends React.Component {
 
@@ -22,7 +22,7 @@ class App extends React.Component {
     isToggle: false,
     isLoading: !true,
     hasError: null,
-    likeLionMembers
+    // likeLionMembers
   };
 
   // 클래스에서는 이렇게 기억할 수 있는 임의의 데이터를 관리할 수 있다.
