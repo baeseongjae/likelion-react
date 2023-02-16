@@ -1,4 +1,5 @@
-{ id: 'likelion__4_1-01', lab: 1, name: '박재석', gender: '남성' },
+export var likeLionMembers = [
+  { id: 'likelion__4_1-01', lab: 1, name: '박재석', gender: '남성' },
   { id: 'likelion__4_1-02', lab: 1, name: '이현석', gender: '남성' },
   { id: 'likelion__4_1-03', lab: 1, name: '김수민', gender: '여성' },
   { id: 'likelion__4_1-04', lab: 1, name: '김도현', gender: '남성' },

@@ -2,6 +2,8 @@ import LogIn from './pages/LogIn.js';
 import Browse from './pages/Browse.js';
 import Home from './pages/Home.js';
 
+import { likeLionMembers } from './data/likeLionMembers.js';
+
 class App extends React.Component {
 
   // 2022 6. 표준 기술
@@ -20,6 +22,7 @@ class App extends React.Component {
     isToggle: false,
     isLoading: !true,
     hasError: null,
+    likeLionMembers
   };
 
   // 클래스에서는 이렇게 기억할 수 있는 임의의 데이터를 관리할 수 있다.
@@ -92,19 +95,25 @@ class App extends React.Component {
 
   render() {
     console.log(this);
-    const {isToggle, isPaid, headline} = this.state;
+    const {
+      isLoading,
+      isToggle, 
+      isPaid, 
+      headline,
+      hasError,
+      likeLionMembers
+    } = this.state;
 
-    if (this.state.isLoading) {
+    if (isLoading) {
       return <div role="alert">데이터 로딩 중...</div> 
     }
 
-    if(this.state.hasError){
-      return <div role="alert">{this.state.hasError.message}</div>
+    if(hasError){
+      return <div role="alert">{hasError.message}</div>
     }
 
-    return (
-      <Home />
-    )
+    return <Home />;
+    
 
     return (
       <div className="App">
