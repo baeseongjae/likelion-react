@@ -1,6 +1,6 @@
-import LogIn from './pages/LogIn.jsx';
-import Browse from './pages/Browse.jsx';
-import Home from './pages/Home.jsx';
+import LogIn from './pages/LogIn.js';
+import Browse from './pages/Browse.js';
+import Home from './pages/Home.js';
 
 // import { likeLionMembers } from './data/likeLionMembers.js';
 

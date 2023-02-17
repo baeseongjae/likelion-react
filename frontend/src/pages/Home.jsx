@@ -1,36 +1,30 @@
-class Home extends React.Component {
-  
-  state = {
-    descriptionList: {
-      api: 'Application Programming Interface',
-      html: 'Hyper Text Markup Language',
-      css: 'Cascading Style Sheets',
-      ajax: 'Asynchronous JavaScript And XML',
-    }
+function Home() {
+
+  const handlePreventDefault = (e) => {
+    e.preventDefault();
   };
 
-  render() {
-    return (
-      <>
-        <h2>설명 목록 리스트 렌더링</h2>
-        <dl>
-          {
-            Object.entries(this.state.descriptionList).map(([key,value])=>{
-              return(
-                <React.Fragment key={key}>
-                  <dt>{key.toUpperCase()}</dt>
-                  <dd>{value}</dd>
-                </React.Fragment>
-              );
-            })
-          }
-          
-        </dl>
-      </>
-        
-    );
+  const handleClicker = (e) => {
+    console.log(e.target);
+    console.log('handleClicker');
   }
 
+  return (
+    <>
+      <h2>React 이벤트 핸들링</h2>
+      <nav onClickCapture={handleClicker}>
+        <ul>
+          <li>
+            <a href="https://beta.reactjs.org" target="_blank" rel="noreferrer noopener">
+              react
+            </a>
+          </li>
+          {/* <li><a href=""></a></li> */}
+          {/* <li><a href=""></a></li> */}
+        </ul>
+      </nav>
+    </>
+  );
 }
 
 export default Home;
